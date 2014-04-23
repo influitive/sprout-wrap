@@ -5,6 +5,16 @@ SITE
     homebrew (1.10.0)
 
 GIT
+  remote: https://github.com/influitive/recipes
+  ref: master
+  sha: 9f7c472cb1aa2a40cd8eda41f7f5e23c4460bb80
+  specs:
+    infl (0.0.1)
+      homebrew (>= 0.0.0)
+      sprout-base (>= 0.0.0)
+      sprout-osx-apps (>= 0.0.0)
+
+GIT
   remote: https://github.com/pivotal-sprout/osx
   ref: master
   sha: 70ef029c8b25dbab5be2fb328b987297c05936db
@@ -77,9 +87,18 @@ GIT
 GIT
   remote: https://github.com/pivotal-sprout/sprout-rbenv
   ref: master
-  sha: e361e7c871d40ecb2649a095a8f8282b5c4f4e7b
+  sha: 7436b84ac159c026961c66b7f96387755f554617
   specs:
     sprout-rbenv (0.1.0)
+      homebrew (>= 0.0.0)
+      sprout-base (>= 0.0.0)
+
+GIT
+  remote: https://github.com/pivotal-sprout/sprout-redis
+  ref: master
+  sha: b2c856a6558a78941b20be52593cb353def14424
+  specs:
+    sprout-redis (0.1.0)
       homebrew (>= 0.0.0)
       sprout-base (>= 0.0.0)
 
@@ -119,6 +138,7 @@ GIT
       sprout-base (>= 0.0.0)
 
 DEPENDENCIES
+  infl (>= 0)
   osx (>= 0)
   sprout-base (>= 0)
   sprout-git (>= 0)
@@ -128,6 +148,7 @@ DEPENDENCIES
   sprout-osx-settings (>= 0)
   sprout-postgresql (>= 0)
   sprout-rbenv (>= 0)
+  sprout-redis (>= 0)
   sprout-ruby (>= 0)
   sprout-rubymine (>= 0)
   sprout-ssh (>= 0)
