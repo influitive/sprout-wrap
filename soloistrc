@@ -40,40 +40,14 @@ recipes:
 - sprout-osx-apps::iterm2
 
 # apps (editors)
-- sprout-osx-apps::textmate_bundles
-- sprout-osx-apps::textmate_preferences
-- sprout-osx-apps::macvim
-- sprout-rubymine
-
-node_attributes:
-  sprout:
-    git:
-      domain: pivotallabs.com
-      authors:
-        - initials: ah
-          name: Abhijit Hiremagalur
-          username: abhi
-        - initials: bc
-          name: Brian Cunnie
-          username: cunnie
-        - initials: jrhb
-          name: Jonathan Barnes
-        - initials: lw
-          name: Luke Winikates
-          username: lwinikates
-      projects:
-        -
-          name: sprout-wrap
-          url: https://github.com/pivotal-sprout/sprout-wrap.git
 - sprout-osx-apps::ack
 - sprout-osx-apps::chrome
 - sprout-osx-apps::dropbox
 - sprout-osx-apps::firefox
-- sprout-osx-apps::alfred
+# - sprout-osx-apps::alfred  # has an issue.
 - sprout-osx-apps::gitx
 - sprout-osx-apps::google_drive
 - sprout-osx-apps::heroku_toolbelt
-- sprout-osx-apps::hipchat
 - sprout-osx-apps::imagemagick
 - sprout-osx-apps::iterm2
 - sprout-osx-apps::hg
@@ -101,72 +75,69 @@ node_attributes:
 - infl::gems
 
 node_attributes:
-  git_pairs_domain: influitive.com
-  git_pairs_prefix: dev
-  git_pairs_authors:
-    - initials: br
-      name: Brad Robertson
-      shortname: brad
-    - initials: er
-      name: Enric Ribas
-      shortname: enric
-    - initials: za
-      name: Zulfiqar Ali
-      shortname: zulfiqar
-    - initials: tc
-      name: Tyler Chamberland
-      shortname: tyler
-    - initials: rv
-      name: Rahil Virani
-      shortname: rahil
-    - initials: mb
-      name: Marius Butuc
-      shortname: marius
-    - initials: sg
-      name: Sundeep Gupta
-      shortname: sundeep
-    - initials: cs
-      name: Craig Savolainen
-      shortname: craig
-    - initials: rb
-      name: Ryan Brunner
-      shortname: ryan
-    - initials: dm
-      name: David Mills
-      shortname: david
-  git_projects:
-    -
-      - devops/sprout-wrap
-      - git@github.com:influitive/sprout-wrap.git
-    -
-      - devops/dotfiles
-      - git@github.com:influitive/dotfiles.git
-    -
-      - devops/recipes
-      - git@github.com:influitive/recipes.git
-    -
-      - waldo
-      - git@github.com:influitive/waldo.git
-    -
-      - hub
-      - git@github.com:influitive/influitive-app.git
-    -
-      - api
-      - git@github.com:influitive/influitive-api.git
-    -
-      - narci-service
-      - git@github.com:influitive/narci_service.git
-  workspace_directory: Code/infl
-  infl:
-    symlinks:
-      - tmux.conf
-      - bash_aliases
-      - vimrc
-      - inputrc
-    sources:
-      - bash_aliases
   sprout:
     git:
+      domain: influitive.com
+      prefix: dev
+      authors:
+        - initials: br
+          name: Brad Robertson
+          shortname: brad
+        - initials: er
+          name: Enric Ribas
+          shortname: enric
+        - initials: za
+          name: Zulfiqar Ali
+          shortname: zulfiqar
+        - initials: tc
+          name: Tyler Chamberland
+          shortname: tyler
+        - initials: rv
+          name: Rahil Virani
+          shortname: rahil
+        - initials: mb
+          name: Marius Butuc
+          shortname: marius
+        - initials: sg
+          name: Sundeep Gupta
+          shortname: sundeep
+        - initials: cs
+          name: Craig Savolainen
+          shortname: craig
+        - initials: rb
+          name: Ryan Brunner
+          shortname: ryan
+        - initials: dm
+          name: David Mills
+          shortname: david
+        - initials: ms
+          name: Mike Stok
+          shortname: mike
+      projects:
+        -
+          name: devops/sprout-wrap
+          url: git@github.com:influitive/sprout-wrap.git
+        -
+          name: devops/dotfiles
+          url: git@github.com:influitive/dotfiles.git
+        -
+          name: devops/recipes
+          url: git@github.com:influitive/recipes.git
+        -
+          name: waldo
+          url: git@github.com:influitive/waldo.git
+        -
+          name: hub
+          url: git@github.com:influitive/influitive-app.git
+        -
+          name: api
+          url: git@github.com:influitive/influitive-api.git
+        -
+          name: community
+          url: git@github.com:influitive/community.git
+        -
+          name: narci-service
+          url: git@github.com:influitive/narci_service.git
       global_config:
         merge.ff: only
         push.default: current
@@ -178,7 +149,7 @@ node_attributes:
     settings:
       clock_format: EEE MMM d  h:mm:ss a
     dock_preferences:
-      orientation: 'left'
+      orientation: 'bottom'
       auto_hide: true
       clear_apps: true
       tile_size: 35
@@ -201,21 +172,25 @@ node_attributes:
         - rbenv-gem-rehash
       casks:
         - ccmenu
-        - ccbbmenu
-        - dropbox
         - firefox
         - github
         - gitx-rowanj
         - google-chrome
-        - google-drive
-        - google-hangouts
-        - menumeters
         - skype
         - tomighty
         - vagrant
         - virtualbox
         - xquartz
         - xscope
+  workspace_directory: Code/infl
+  infl:
+    symlinks:
+      - tmux.conf
+      - bash_aliases
+      - vimrc
+      - inputrc
+    sources:
+      - bash_aliases
   sublime_text_packages:
     - name: Git
       source: git://github.com/kemayo/sublime-text-2-git.git
@@ -260,17 +235,10 @@ node_attributes:
         - git_flow
         - gem
         - brew
-  dock_preferences:
-    orientation: bottom
-    autohide: true
-    clear_apps: true
-    tilesize: 50
   rvm:
     rubies:
-      ruby-2.1.3:
+      ruby-2.1.4:
         command_line_options: --verify-downloads 1
-      ruby-2.1.2:
-        command_line_options: --verify-downloads 1
-    default_ruby: ruby-2.0.0
+    default_ruby: ruby-2.1.4
   versions:
     rvm: e6c29e2e53fbbe6fa09bd31a426d2d97bade019e
