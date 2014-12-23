@@ -44,7 +44,7 @@ recipes:
 - sprout-osx-apps::chrome
 - sprout-osx-apps::dropbox
 - sprout-osx-apps::firefox
-# - sprout-osx-apps::alfred  # has an issue.
+# - sprout-osx-apps::alfred  # TODO has an issue.
 - sprout-osx-apps::gitx
 - sprout-osx-apps::google_drive
 - sprout-osx-apps::heroku_toolbelt
@@ -113,6 +113,7 @@ node_attributes:
         - initials: ms
           name: Mike Stok
           shortname: mike
+      workspace_directory: Code/infl
       projects:
         -
           name: devops/sprout-wrap
@@ -138,6 +139,15 @@ node_attributes:
         -
           name: narci-service
           url: git@github.com:influitive/narci_service.git
+        -
+          name: apartment
+          url: git@github.com:influitive/apartment.git
+        -
+          name: engage
+          url: git@github.com:influitive/engage.git
+        -
+          name: common
+          url: git@github.com:influitive/influitive-common.git
       global_config:
         merge.ff: only
         push.default: current
@@ -153,7 +163,7 @@ node_attributes:
       auto_hide: true
       clear_apps: true
       tile_size: 35
-      magnification': false
+      magnification: true
     homebrew:
       formulae:
         - ctags-exuberant
@@ -182,7 +192,6 @@ node_attributes:
         - virtualbox
         - xquartz
         - xscope
-  workspace_directory: Code/infl
   infl:
     symlinks:
       - tmux.conf
@@ -237,6 +246,8 @@ node_attributes:
         - brew
   rvm:
     rubies:
+      ruby-2.1.3:
+        command_line_options: --verify-downloads 1
       ruby-2.1.4:
         command_line_options: --verify-downloads 1
     default_ruby: ruby-2.1.4
