@@ -5,16 +5,6 @@ SITE
     homebrew (1.10.0)
 
 GIT
-  remote: https://github.com/influitive/recipes
-  ref: master
-  sha: 9f7c472cb1aa2a40cd8eda41f7f5e23c4460bb80
-  specs:
-    infl (0.0.1)
-      homebrew (>= 0.0.0)
-      sprout-base (>= 0.0.0)
-      sprout-osx-apps (>= 0.0.0)
-
-GIT
   remote: https://github.com/pivotal-sprout/osx
   ref: master
   sha: 70ef029c8b25dbab5be2fb328b987297c05936db
@@ -128,6 +118,14 @@ GIT
     sprout-terminal (0.1.0)
       osx (>= 0.0.0)
       sprout-base (>= 0.0.0)
+
+PATH
+  remote: recipes/infl
+  specs:
+    infl (0.0.1)
+      homebrew (>= 0.0.0)
+      sprout-base (>= 0.0.0)
+      sprout-osx-apps (>= 0.0.0)
 
 PATH
   remote: recipes/sprout-homebrew

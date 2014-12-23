@@ -40,11 +40,11 @@ recipes:
 - sprout-osx-apps::iterm2
 
 # apps (editors)
+# - sprout-osx-apps::alfred  # TODO has an issue.
 - sprout-osx-apps::ack
 - sprout-osx-apps::chrome
 - sprout-osx-apps::dropbox
 - sprout-osx-apps::firefox
-# - sprout-osx-apps::alfred  # TODO has an issue.
 - sprout-osx-apps::gitx
 - sprout-osx-apps::google_drive
 - sprout-osx-apps::heroku_toolbelt
@@ -71,7 +71,7 @@ recipes:
 - infl::tmuxinator
 - infl::create_psql_root_user
 - infl::create_folders
-- infl::shiftit
+# - infl::shiftit  # TODO this installs an old 1.6 version of ShiftIt 2.3 is much better
 - infl::gems
 
 node_attributes:
